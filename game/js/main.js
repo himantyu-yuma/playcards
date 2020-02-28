@@ -1,15 +1,17 @@
 let markerID_1 = null;
 let markerID_2 = null;
 let markerIDs = [];
+
+let score = 0;
 AFRAME.registerComponent('registerevents', {
     init: function () {
         var marker = this.el;
 
         // マーカーを検出したイベントの登録
         marker.addEventListener('markerFound', function () {
-            var knight = marker.querySelector(".knight_entity")
+            // var knight = marker.querySelector(".knight_entity")
             var random = Math.floor( Math.random() * 5 );
-            knight.setAttribute("animation-mixer", `clip: Pose${random}`);
+            // knight.setAttribute("animation-mixer", `clip: Pose${random}`);
             markerIDs.push(marker.id);
 
             if (markerIDs.length >= 3) {
@@ -38,7 +40,8 @@ function check(cards) {
     if (nums.length != 2) {
         return;
     } else if (nums[0] == nums[1]) {
-        console.log("score++")
+        score += 10;
+        document.getElementById("score").innerText = score;
     }
 }
 
