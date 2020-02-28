@@ -5,129 +5,171 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cARds</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+    
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
     <script src="js/main.js"></script>
 </head>
 
 <body>
-    <div class="ar">
-        <a-scene embedded arjs="debugUIEnabled:false;">
-    
-            <a-assets>
-                <a-asset-item id="knight" src="js/models/Trump_Army.glb"></a-asset-item>
-            </a-assets>
-    
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-heart.patt" id="h" registerevents>
-                <a-box position='0 0.5 0' material='color: pink;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-diamond.patt" id="d" registerevents>
-                <a-sphere position='0 0.5 0' material='color: blue;'></a-sphere>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-spade.patt" id="s" registerevents>
-                <a-cone position='0 0.5 0' material='color: purple;'></a-cone>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-clab.patt" id="c" registerevents>
-                <a-cylinder position='0 0.5 0' material='color: green;'></a-cylinder>
-            </a-marker>
-    
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r1.patt" id="1" registerevents>
-                <a-entity class="knight_entity" id="r1knight" gltf-model="#knight" animation-mixer="clip: Pose2" position="0 0 0"
-                    rotation="0 0 0" scale="0.1 0.1 0.1" visible="true"></a-entity>
-    
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r2.patt" id="2" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r3.patt" id="3" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r4.patt" id="4" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r5.patt" id="5" registerevents>
-                <a-box position='0 0.5 0' material='color: pink;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r6.patt" id="6" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r7.patt" id="7" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r8.patt" id="8" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r9.patt" id="9" registerevents>
-                <a-box position='0 0.5 0' material='color: pink;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r10.patt" id="10" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r11.patt" id="11" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r12.patt" id="12" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-r13.patt" id="13" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-    
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b1.patt" id="1" registerevents>
-                <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose2" position="0 0 0"
-                    rotation="0 0 0" scale="0.1 0.1 0.1" visible="true"></a-entity>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b2.patt" id="2" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b3.patt" id="3" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b4.patt" id="4" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b5.patt" id="5" registerevents>
-                <a-box position='0 0.5 0' material='color: pink;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b6.patt" id="6" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b7.patt" id="7" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b8.patt" id="8" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b9.patt" id="9" registerevents>
-                <a-box position='0 0.5 0' material='color: pink;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b10.patt" id="10" registerevents>
-                <a-box position='0 0.5 0' material='color: blue;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b11.patt" id="11" registerevents>
-                <a-box position='0 0.5 0' material='color: purple;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b12.patt" id="12" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-b13.patt" id="13" registerevents>
-                <a-box position='0 0.5 0' material='color: green;'></a-box>
-            </a-marker>
-    
-            <a-marker type="pattern" preset="custom" url="js/patt/pattern-joker.patt" id="joker" registerevents>
-                <a-sphere position='0 0.5 0' material='color: black;'></a-sphere>
-            </a-marker>
-    
-            <a-entity camera></a-entity>
-        </a-scene>
-    </div>
+    <a-scene embedded arjs="debugUIEnabled:false;">
+
+        <a-assets>
+            <a-asset-item id="knight" src="js/models/Trump_Army.glb"></a-asset-item>
+        </a-assets>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-heart.patt" id="h" registerevents>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-diamond.patt" id="d" registerevents>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-spade.patt" id="s" registerevents>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-clab.patt" id="c" registerevents>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r1.patt" id="1" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r2.patt" id="2" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r3.patt" id="3" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r4.patt" id="4" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r5.patt" id="5" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r6.patt" id="6" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r7.patt" id="7" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r8.patt" id="8" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r9.patt" id="9" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r10.patt" id="10" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r11.patt" id="11" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r12.patt" id="12" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r13.patt" id="13" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b1.patt" id="1" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose2" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b2.patt" id="2" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b3.patt" id="3" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b4.patt" id="4" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b5.patt" id="5" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b6.patt" id="6" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b7.patt" id="7" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b8.patt" id="8" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b9.patt" id="9" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b10.patt" id="10" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0.2" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b11.patt" id="11" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b12.patt" id="12" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b13.patt" id="13" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose1" position="0 0 0"
+                rotation="0 0 0" scale="0.2 0.2 0.2" visible="true"></a-entity>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-joker.patt" id="joker" registerevents>
+            <a-entity
+                text="value: Joker; align: center; width:10; font: https://cdn.aframe.io/fonts/KelsonSans.fnt; color:red; side: double"
+                animation="property: rotation; to: 0 360 0; loop: true; dur: 10000">
+            </a-entity>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+    </a-scene>
     <div class="ui" style="position:absolute;top:0;left:0;width:100%;height:100%">
         <div class="score" style="font-size: 100px;">Score: <span id="score">0</span></div>
+        <button class="btn btn-danger fixed-bottom" onclick="endGame();">
+            終了
+        </button>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+    crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script src="showUI"></script>
+
+    <script src="showUI.js"></script>
 </body>
 
 </html>

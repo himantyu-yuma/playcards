@@ -4,18 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cARds</title>
+    <title>結果発表</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
         integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 </head>
 
 <body>
-    <h1 class="mt-5 text-center">部屋を作る</h1>
-    <form name="room">
-        <input type="text" name="room_name" id="room_name" class="mt-5 form-control" placeholder="部屋名">
-        <input type="text" name="user_name" id="user_name" class="mt-5 form-control" placeholder="プレイヤー名">
-        <button type="button" class="btn btn-primary mx-auto d-block mt-5" onclick="getFormValue()">作る</button>
-    </form>
+    <h1 class="mt-5 text-center">結果発表</h1>
+    <h1>優勝：<span id="win"></span></h1>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
@@ -32,7 +28,7 @@
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/result.js"></script>
 </body>
 
 </html>
