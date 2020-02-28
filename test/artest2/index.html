@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>artest2</title>
+    <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
+    <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.1/aframe/build/aframe-ar.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <a-scene embedded arjs>
+        <a-assets>
+            <a-asset-item id="knight" src="js/models/Trump_Army.glb"></a-asset-item>
+        </a-assets>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-heart.patt" id="h" registerevents>
+            <a-box position='0 0.5 0' material='color: pink;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-diamond.patt" id="d" registerevents>
+            <a-sphere position='0 0.5 0' material='color: blue;'></a-sphere>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-spade.patt" id="s" registerevents>
+            <a-cone position='0 0.5 0' material='color: purple;'></a-cone>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-clab.patt" id="c" registerevents>
+            <a-cylinder position='0 0.5 0' material='color: green;'></a-cylinder>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r1.patt" id="1" registerevents>
+            <a-entity class="knight_entity" id="r1knight" gltf-model="#knight" animation-mixer="clip: Pose2" position="0 0 0"
+                rotation="0 0 0" scale="0.1 0.1 0.1" visible="true"></a-entity>
+
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r2.patt" id="2" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r3.patt" id="3" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r4.patt" id="4" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r5.patt" id="5" registerevents>
+            <a-box position='0 0.5 0' material='color: pink;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r6.patt" id="6" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r7.patt" id="7" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r8.patt" id="8" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r9.patt" id="9" registerevents>
+            <a-box position='0 0.5 0' material='color: pink;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r10.patt" id="10" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r11.patt" id="11" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r12.patt" id="12" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-r13.patt" id="13" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b1.patt" id="1" registerevents>
+            <a-entity class="knight_entity" gltf-model="#knight" animation-mixer="clip: Pose2" position="0 0 0"
+                rotation="0 0 0" scale="0.1 0.1 0.1" visible="true"></a-entity>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b2.patt" id="2" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b3.patt" id="3" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b4.patt" id="4" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b5.patt" id="5" registerevents>
+            <a-box position='0 0.5 0' material='color: pink;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b6.patt" id="6" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b7.patt" id="7" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b8.patt" id="8" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b9.patt" id="9" registerevents>
+            <a-box position='0 0.5 0' material='color: pink;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b10.patt" id="10" registerevents>
+            <a-box position='0 0.5 0' material='color: blue;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b11.patt" id="11" registerevents>
+            <a-box position='0 0.5 0' material='color: purple;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b12.patt" id="12" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-b13.patt" id="13" registerevents>
+            <a-box position='0 0.5 0' material='color: green;'></a-box>
+        </a-marker>
+
+        <a-marker type="pattern" preset="custom" url="js/patt/pattern-joker.patt" id="joker" registerevents>
+            <a-sphere position='0 0.5 0' material='color: black;'></a-sphere>
+        </a-marker>
+
+        <a-entity camera></a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
